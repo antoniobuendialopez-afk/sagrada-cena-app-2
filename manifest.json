@@ -1,0 +1,25 @@
+
+{
+  "name": "AM Sagrada Cena Córdoba",
+  "short_name": "Cena App",
+  "description": "Intranet privada para componentes de la AM Sagrada Cena de Córdoba.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#841525",
+  "theme_color": "#841525",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/MkqHRVJq/Whats-App-Image-2024-08-08-at-17-21-35-removebg-preview.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.ibb.co/MkqHRVJq/Whats-App-Image-2024-08-08-at-17-21-35-removebg-preview.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
