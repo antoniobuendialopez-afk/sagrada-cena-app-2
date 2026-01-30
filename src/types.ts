@@ -28,6 +28,7 @@ export interface Member {
   role: UserRole;
   instrument: InstrumentType;
   email: string;
+  password?: string; // Campo para login
   phone?: string;
   dni?: string;
   birthDate?: string;

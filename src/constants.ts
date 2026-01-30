@@ -31,6 +31,7 @@ export const MOCK_MEMBERS: Member[] = [
     role: UserRole.DIRECTOR,
     instrument: 'Trompeta 1ª',
     email: 'admin@cena.com',
+    password: '123', // Contraseña sencilla para demo
     phone: '+34 600 000 001',
     dni: '12345678A',
     joinDate: '2010-05-15',
@@ -43,6 +44,7 @@ export const MOCK_MEMBERS: Member[] = [
     role: UserRole.ENCARGADO_VOZ,
     instrument: 'Trombón 1º',
     email: 'maria@gmail.com',
+    password: '123',
     phone: '+34 600 000 002',
     joinDate: '2018-09-20',
     attendanceRate: 88
@@ -54,6 +56,7 @@ export const MOCK_MEMBERS: Member[] = [
     role: UserRole.MUSICO,
     instrument: 'Batería',
     email: 'carlos@gmail.com',
+    password: '123',
     joinDate: '2021-02-10',
     attendanceRate: 75
   }
