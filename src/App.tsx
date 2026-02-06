@@ -691,4 +691,86 @@ export default function App() {
       </main>
     </div>
   );
+</div>
+        );
+      
+      case 'tools': 
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in duration-500">
+            <Metronome />
+            <Tuner />
+          </div>
+        );
+
+      default:
+        return (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <h2 className="text-xl font-black text-slate-800 uppercase italic">Pestaña en desarrollo</h2>
+            <p className="text-slate-400 text-sm">Próximamente disponible para la Sagrada Cena.</p>
+          </div>
+        );
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex">
+      {/* Sidebar - Desktop */}
+      <aside className={`fixed inset-y-0 left-0 z-50 w-72 bg-white border-r border-slate-100 transition-transform lg:translate-x-0 lg:static ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="flex flex-col h-full p-8">
+          <div className="flex items-center gap-4 mb-12">
+            <BrandLogo className="w-10 h-10" />
+            <div>
+              <h2 className="font-black text-[#841525] uppercase tracking-tighter leading-none text-lg">Sagrada Cena</h2>
+              <p className="text-[8px] text-[#D5A021] font-black uppercase tracking-widest mt-1">Cádiz • 2024</p>
+            </div>
+          </div>
+
+          <nav className="flex-1 space-y-2">
+            {[
+              { id: 'feed', label: 'Anuncios', icon: Home },
+              { id: 'calendar', label: 'Agenda', icon: CalendarIcon },
+              { id: 'scores', label: 'Partituras', icon: Music },
+              { id: 'members', label: 'Músicos', icon: Users },
+              { id: 'tools', label: 'Herramientas', icon: Cpu },
+              { id: 'inventory', label: 'Inventario', icon: Package },
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => { setActiveTab(item.id); setSidebarOpen(false); }}
+                className={`w-full flex items-center space-x-4 px-6 py-4 rounded-2xl transition-all ${activeTab === item.id ? 'bg-[#FDF2F4] text-[#841525] shadow-sm' : 'text-slate-400 hover:bg-slate-50'}`}
+              >
+                <item.icon size={20} className={activeTab === item.id ? 'text-[#841525]' : 'text-slate-300'} />
+                <span className="font-black text-[10px] uppercase tracking-widest">{item.label}</span>
+              </button>
+            ))}
+          </nav>
+
+          <button onClick={() => setCurrentUser(null)} className="flex items-center space-x-4 px-6 py-4 text-slate-300 hover:text-red-600 transition-colors mt-auto">
+            <LogOut size={20} />
+            <span className="font-black text-[10px] uppercase tracking-widest">Cerrar Sesión</span>
+          </button>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 min-w-0 flex flex-col h-screen overflow-hidden">
+        <header className="bg-white border-b border-slate-100 px-8 py-6 flex items-center justify-between lg:justify-end shrink-0">
+          <button className="lg:hidden p-2 text-slate-400" onClick={() => setSidebarOpen(true)}><Menu /></button>
+          <div className="flex items-center gap-4">
+            <div className="text-right hidden sm:block">
+              <p className="text-[10px] font-black text-slate-800 uppercase leading-none">{currentUser.name} {currentUser.surname}</p>
+              <p className="text-[8px] font-black text-[#D5A021] uppercase tracking-tighter mt-1">{currentUser.role}</p>
+            </div>
+            <div className="w-10 h-10 bg-[#841525] rounded-xl flex items-center justify-center text-[#D5A021] font-black text-sm uppercase">{currentUser.name[0]}</div>
+          </div>
+        </header>
+
+        <section className="flex-1 overflow-y-auto p-8 lg:p-12">
+          <div className="max-w-6xl mx-auto">
+            {renderContent()}
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
