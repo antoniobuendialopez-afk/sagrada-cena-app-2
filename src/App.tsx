@@ -375,7 +375,7 @@ export default function App() {
               <h3 className="text-xl font-black text-slate-800 mb-3">{item.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">{item.content}</p>
               <div className="flex justify-between items-center pt-4 border-t border-slate-50 text-[10px] font-bold text-slate-300 uppercase italic">
-                <span>{item.author}</span>
+                <span>{String(item.author)}</span>
                 <span>{new Date(item.date).toLocaleDateString()}</span>
               </div>
             </div>
