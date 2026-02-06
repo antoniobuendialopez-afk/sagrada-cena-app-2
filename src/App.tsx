@@ -698,7 +698,6 @@ export default function App() {
             <Tuner />
           </div>
         );
-    }
 
       default:
         return (
