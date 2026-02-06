@@ -690,9 +690,6 @@ export default function App() {
         </div>
       </main>
     </div>
-  );
-</div>
-        );
       
       case 'tools': 
         return (
@@ -701,6 +698,7 @@ export default function App() {
             <Tuner />
           </div>
         );
+    }
 
       default:
         return (
